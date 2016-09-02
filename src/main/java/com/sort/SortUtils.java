@@ -1,6 +1,6 @@
 package com.sort;
 
-public class SortUtil {
+public class SortUtils {
 
 	public static void printArray(int[] array) {
 		System.out.print("{");

@@ -1,41 +1,45 @@
 package com.sort;
 
-
+/**
+ * 快速排序
+ * 
+ * @Author Patrick 魏彬彬
+ * @Date 2016年9月2日
+ *
+ */
 public class QuickSort {
 
 	public static void main(String[] args) {
 		int[] array = { 8, 3, 5, 0, 9, 1, 6, 4, 2 };
-		SortUtil.printArray(array);
+		SortUtils.printArray(array);
 
 		quick(array, 0, array.length - 1);
-		SortUtil.printArray(array);
+		SortUtils.printArray(array);
 	}
 
-	private static void quick(int[] array, int left, int right) {
+	private static void quick(int[] a, int left, int right) {
 		int middle = 0;
 		if (left < right) {
-			middle = middle(array, left, right);
-			quick(array, left, middle - 1);
-			quick(array, middle + 1, right);
+			middle = middle(a, left, right);
+			quick(a, left, middle - 1);
+			quick(a, middle + 1, right);
 		}
 	}
 
-	private static int middle(int[] array, int left, int right) {
-		int temp = array[left];
-
+	private static int middle(int[] a, int left, int right) {
+		int temp = a[left];
 		while (left < right) {
-			while (left < right && array[right] <= temp) {
+			while (left < right && a[right] >= temp) {
 				right--;
 			}
-			array[left] = array[right];
+			a[left] = a[right];
 
-			while (left < right && array[left] >= temp) {
+			while (left < right && a[left] <= temp) {
 				left++;
 			}
-			array[right] = array[left];
+			a[right] = a[left];
 		}
-		array[left] = temp;
-		
+		a[left] = temp;
 		return left;
 	}
 

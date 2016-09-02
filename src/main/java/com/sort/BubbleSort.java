@@ -1,20 +1,20 @@
 package com.sort;
 
 /**
- * 
+ * 冒泡排序
  * 
  * @Author Patrick 魏彬彬
  * @Date 2016年9月2日
  *
  */
-public class BubbleSort extends SortUtil {
+public class BubbleSort extends SortUtils {
 
 	public static void main(String[] args) {
 		int[] array = { 8, 3, 5, 0, 9, 1, 6, 4, 2 };
-		SortUtil.printArray(array);
+		SortUtils.printArray(array);
 
 		bubble(array);
-		SortUtil.printArray(array);
+		SortUtils.printArray(array);
 	}
 
 	private static void bubble(int[] array) {
