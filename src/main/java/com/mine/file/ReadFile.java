@@ -3,7 +3,7 @@ package com.mine.file;
 import java.io.File;
 import java.util.Calendar;
 
-import com.mine.TimeUtil;
+import com.util.TimeUtil;
 
 public class ReadFile {
 

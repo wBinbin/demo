@@ -1,5 +1,4 @@
-package com.mine;
-
+package com.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,7 +6,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class TimeUtil {
-	
+
+	/**
+	 * 值 yyyyMM
+	 */
+	public static final String YYYYMM = "yyyyMM";
+
 	/**
 	 * 值 yyyy-MM
 	 */
@@ -17,6 +21,11 @@ public class TimeUtil {
 	 * 值 yyyy-MM-dd
 	 */
 	public static final String YYYY_MM_DD = "yyyy-MM-dd";
+
+	/**
+	 * 值 yyyyMMdd
+	 */
+	public static final String YYYYMMDD = "yyyyMMdd";
 
 	/**
 	 * 值 yyyy-MM-dd hh:mm:ss
@@ -178,6 +187,13 @@ public class TimeUtil {
 	}
 
 	/**
+	 * 取当前时间
+	 */
+	public static String getCurrentHour() {
+		return getCurrentDateTime("HH");
+	}
+
+	/**
 	 * 获取当前星期
 	 * 
 	 * @return 当前星期,如一，二等.
@@ -188,5 +204,37 @@ public class TimeUtil {
 		int day = calendar.get(Calendar.DAY_OF_WEEK) - 1;
 		return day;
 	}
-	
+
+	/**
+	 * 判断优惠券是否过期
+	 * 
+	 * @param useEndtime
+	 * @return
+	 */
+	public static boolean checkOverdueDate(Date useEndtime) {
+		if (useEndtime == null) {
+			return false;
+		}
+		Calendar c1 = Calendar.getInstance();
+		c1.setTime(useEndtime);
+		Calendar c2 = Calendar.getInstance();
+		return c1.before(c2);
+	}
+
+	/**
+	 * 判断是否到使用期
+	 * 
+	 * @param useStarttime
+	 * @return
+	 */
+	public static boolean checkNotdueDate(Date useStarttime) {
+		if (useStarttime == null) {
+			return false;
+		}
+		Calendar c1 = Calendar.getInstance();
+		c1.setTime(useStarttime);
+		Calendar c2 = Calendar.getInstance();
+		return c1.after(c2);
+	}
+
 }
