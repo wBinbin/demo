@@ -1,6 +1,7 @@
-package com.mine.demo20150929;
+package com.calculte;
 
-public class Plus extends AbstractCalcultor {
+
+public class IntegerPlus extends AbstractIntegerCalcultor {
 
 	@Override
 	public int calculte(int a, int b) {
@@ -8,7 +9,7 @@ public class Plus extends AbstractCalcultor {
 	}
 
 	public static void main(String[] args) {
-		AbstractCalcultor cal = new Plus();
+		AbstractIntegerCalcultor cal = new IntegerPlus();
 		int r = cal.calculte("2+3", "\\+");
 		System.out.println(r);
 	}

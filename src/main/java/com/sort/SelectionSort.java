@@ -1,5 +1,7 @@
 package com.sort;
 
+import com.util.ArrayUtils;
+
 /**
  * 选择排序
  * 
@@ -7,14 +9,14 @@ package com.sort;
  * @Date 2016年9月2日
  *
  */
-public class SelectionSort extends SortUtils {
+public class SelectionSort {
 
 	public static void main(String[] args) {
-		int[] array = { 8, 3, 5, 0, 9, 1, 6, 4, 2 };
-		SortUtils.printArray(array);
+		int[] array = ArrayUtils.array;
+		ArrayUtils.printArray(array);
 
 		selection(array);
-		SortUtils.printArray(array);
+		ArrayUtils.printArray(array);
 	}
 
 	private static void selection(int[] array) {

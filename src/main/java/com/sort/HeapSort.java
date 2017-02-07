@@ -1,13 +1,15 @@
 package com.sort;
 
-public class HeapSort extends SortUtils {
+import com.util.ArrayUtils;
+
+public class HeapSort {
 
 	public static void main(String[] args) {
-		int[] array = { 8, 3, 5, 0, 9, 1, 6, 4, 2 };
-		SortUtils.printArray(array);
+		int[] array = ArrayUtils.array;
+		ArrayUtils.printArray(array);
 
 		heap(array);
-		SortUtils.printArray(array);
+		ArrayUtils.printArray(array);
 	}
 
 	private static void heap(int[] array) {

@@ -4,6 +4,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
+import com.collection.MyComparator;
+
 public class Demo {
 
 	public static void main(String[] args) {

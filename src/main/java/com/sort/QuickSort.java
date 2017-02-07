@@ -1,5 +1,7 @@
 package com.sort;
 
+import com.util.ArrayUtils;
+
 /**
  * 快速排序
  * 
@@ -10,11 +12,11 @@ package com.sort;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int[] array = { 8, 3, 5, 0, 9, 1, 6, 4, 2 };
-		SortUtils.printArray(array);
+		int[] array = ArrayUtils.array;
+		ArrayUtils.printArray(array);
 
 		quick(array, 0, array.length - 1);
-		SortUtils.printArray(array);
+		ArrayUtils.printArray(array);
 	}
 
 	private static void quick(int[] a, int left, int right) {

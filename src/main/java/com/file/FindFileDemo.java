@@ -1,11 +1,21 @@
-package com.mine.file;
+package com.file;
 
 import java.io.File;
 import java.util.Calendar;
 
 import com.util.TimeUtil;
 
-public class ReadFile {
+/**
+ * 
+ * <p>
+ * 描述：查找文件夹中所有的文件
+ * </p>
+ *
+ * @Author patrick
+ * @Date 2017年1月20日
+ *
+ */
+public class FindFileDemo {
 
 	public static void main(String[] args) {
 		File file = new File("D:\\workspace\\in_order\\src\\main\\java");

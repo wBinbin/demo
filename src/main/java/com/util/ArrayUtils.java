@@ -1,6 +1,8 @@
-package com.sort;
+package com.util;
 
-public class SortUtils {
+public class ArrayUtils {
+
+	public static int[] array = { 8, 3, 5, 0, 9, 1, 6, 4, 2 };
 
 	public static void printArray(int[] array) {
 		System.out.print("{");

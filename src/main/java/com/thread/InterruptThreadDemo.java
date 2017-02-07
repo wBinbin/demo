@@ -8,7 +8,6 @@ public class InterruptThreadDemo {
 		test2();
 	}
 
-	@SuppressWarnings("static-access")
 	private static void test2() {
 		try {
 			Thread t = new ThreadC();
