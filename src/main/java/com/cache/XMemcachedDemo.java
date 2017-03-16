@@ -7,6 +7,7 @@ import net.rubyeye.xmemcached.MemcachedClient;
 import net.rubyeye.xmemcached.MemcachedClientBuilder;
 import net.rubyeye.xmemcached.XMemcachedClientBuilder;
 import net.rubyeye.xmemcached.exception.MemcachedException;
+import net.rubyeye.xmemcached.impl.KetamaMemcachedSessionLocator;
 import net.rubyeye.xmemcached.utils.AddrUtil;
 
 public class XMemcachedDemo {
@@ -15,9 +16,11 @@ public class XMemcachedDemo {
 		MemcachedClientBuilder builder = new XMemcachedClientBuilder(AddrUtil.getAddresses("123.59.65.113:11211"));
 		MemcachedClient client;
 		try {
+			builder.setSessionLocator(new KetamaMemcachedSessionLocator());
 			client = builder.build();
-			System.out.println(client.get("wbinbin"));
-
+			
+			System.out.println((String) client.get("wbinbin"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (TimeoutException e) {
