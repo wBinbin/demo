@@ -163,6 +163,13 @@
 			<version>1.8.9</version>
 			<scope>${scope.type}</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
+		<dependency>
+		    <groupId>com.rabbitmq</groupId>
+		    <artifactId>amqp-client</artifactId>
+		    <version>4.1.0</version>
+		</dependency>
 
 	</dependencies>
 
