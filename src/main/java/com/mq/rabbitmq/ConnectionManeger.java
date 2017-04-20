@@ -7,6 +7,8 @@ public class ConnectionManeger {
 	public static final String EXCHANGE_NAME = "log";
 
 	public static final String QUEUE_NAME = "hello";
+	
+	public static final String RPC_QUEUE_NAME = "rpc_queue";
 
 	private static Object lock = new Object();
 
