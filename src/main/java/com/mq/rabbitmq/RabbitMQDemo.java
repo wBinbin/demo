@@ -6,6 +6,7 @@ public class RabbitMQDemo {
 
 	public static void main(String[] args) {
 		publishAndSubscribe();
+	
 	}
 
 	private static void publishAndSubscribe() {
