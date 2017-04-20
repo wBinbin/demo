@@ -8,21 +8,19 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
 public class Publish {
-
-	public static void main(String[] args) {
-		Publish p1 = new Publish();
-		p1.send("123456789");
-	}
-
-	private void send(String msg) {
+	
+	public void send(String publishName, String exchange, String routingKey, String msg) {
+		System.out.println("Publish " + publishName + " start send. ");
 		Connection connection = null;
 		Channel channel = null;
 		try {
+			msg = " [" + publishName + "] " + msg;
+			
 			connection = ConnectionManeger.init().newConnection();
 			channel = connection.createChannel();
-			channel.exchangeDeclare(ConnectionManeger.EXCHANGE_NAME, BuiltinExchangeType.FANOUT);
+			channel.exchangeDeclare(exchange, BuiltinExchangeType.TOPIC);
 
-			channel.basicPublish(ConnectionManeger.EXCHANGE_NAME, "", null, msg.getBytes());
+			channel.basicPublish(exchange, routingKey, null, msg.getBytes());
 
 		} catch (IOException e) {
 			e.printStackTrace();
